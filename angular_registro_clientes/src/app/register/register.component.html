@@ -1,0 +1,81 @@
+﻿<h2>Registro</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="cliente_nome">Nome</label>
+        <input type="text" formControlName="cliente_nome" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cliente_nome.errors }" />
+        <div *ngIf="submitted && f.cliente_nome.errors" class="invalid-feedback">
+            <div *ngIf="f.cliente_nome.errors.required">nome obrigatorio</div>
+            <div *ngIf="f.cliente_nome.errors.minlength">Nome deve ter no minimo 3 caracteres</div>
+     </div>
+    </div>
+    <div class="form-group">
+        <label for="cliente_email">Email</label>
+        <input type="text" formControlName="cliente_email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cliente_email.errors }" />
+        <div *ngIf="submitted && f.cliente_email.errors" class="invalid-feedback">
+            <div *ngIf="f.cliente_email.errors.required">email obrigatorio</div>
+            <div *ngIf="f.cliente_email.errors.email">email obrigatorio</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cliente_telefone">Telefone</label>
+        <input type="text" formControlName="cliente_telefone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cliente_telefone.errors }" />
+        <div *ngIf="submitted && f.cliente_telefone.errors" class="invalid-feedback">
+            <div *ngIf="f.cliente_telefone.errors.required">telefone obrigatorio</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cliente_cpf">CPF</label>
+        <input type="cliente_cpf" formControlName="cliente_cpf" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cliente_cpf.errors }" />
+        <div *ngIf="submitted && f.cliente_cpf.errors" class="invalid-feedback">
+            <div *ngIf="f.cliente_cpf.errors.required">CPF Obrigatorio</div>
+            <div *ngIf="f.cliente_cpf.errors.minlength">Cpf Inválido</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cliente_cep">CEP</label>
+        <input type="cliente_cep" formControlName="cliente_cep" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cliente_cep.errors }" />
+        <div *ngIf="submitted && f.cliente_cep.errors" class="invalid-feedback">
+            <div *ngIf="f.cliente_cep.errors.required">CEP Obrigatorio</div>
+            <div *ngIf="f.cliente_cep.errors.minlength">Cep Inválido</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cliente_cidade">Cidade</label>
+        <input type="cliente_cidade" formControlName="cliente_cidade" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cliente_cidade.errors }" />
+        <div *ngIf="submitted && f.cliente_cidade.errors" class="invalid-feedback">
+            <div *ngIf="f.cliente_cidade.errors.required">Cidade Obrigatorio</div>
+            <div *ngIf="f.cliente_cidade.errors.minlength">Cidade Inválido</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cliente_uf">UF</label>
+        <input type="cliente_uf" formControlName="cliente_uf" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cliente_uf.errors }" />
+        <div *ngIf="submitted && f.cliente_uf.errors" class="invalid-feedback">
+            <div *ngIf="f.cliente_uf.errors.required">Uf Obrigatorio</div>
+            <div *ngIf="f.cliente_uf.errors.minlength">Uf Inválido</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cliente_bairro">Bairro</label>
+        <input type="cliente_bairro" formControlName="cliente_bairro" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cliente_bairro.errors }" />
+        <div *ngIf="submitted && f.cliente_bairro.errors" class="invalid-feedback">
+            <div *ngIf="f.cliente_bairro.errors.required">Bairro Obrigatorio</div>
+            <div *ngIf="f.cliente_bairro.errors.minlength">Bairro Inválido</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cliente_logradouro">Logradouro</label>
+        <input type="cliente_logradouro" formControlName="cliente_logradouro" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cliente_logradouro.errors }" />
+        <div *ngIf="submitted && f.cliente_logradouro.errors" class="invalid-feedback">
+            <div *ngIf="f.cliente_logradouro.errors.required">Logradouro Obrigatorio</div>
+            <div *ngIf="f.cliente_logradouro.errors.minlength">Logradouro Inválido</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Registro
+        </button>
+        <a routerLink="/login" class="btn btn-link">Cancel</a>
+    </div>
+</form>

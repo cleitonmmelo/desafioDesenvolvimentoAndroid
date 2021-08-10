@@ -1,0 +1,9 @@
+﻿<h1>Olá {{currentUser.username}}!</h1>
+<ul>
+    <li *ngFor="let cliente of clientes">
+        Nome: {{cliente.cliente_nome}} Cpf:{{cliente.cliente_cpf}} Email:{{cliente.cliente_email}}
+        Cep:{{cliente.cliente_cep}} Cidade:{{cliente.cliente_cidade}} Uf:{{cliente.cliente_uf}} Bairro:{{cliente.cliente_bairro}}
+        Logradouro:{{cliente.cliente_logradouro}}
+        - <a (click)="deleteUser(cliente.cliente_id)" class="text-danger">Delete</a>
+    </li>
+</ul>
